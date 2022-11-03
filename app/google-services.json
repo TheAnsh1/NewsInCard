@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "573088656315",
+    "project_id": "newsincardview",
+    "storage_bucket": "newsincardview.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573088656315:android:38b55c8402b2a1b741329e",
+        "android_client_info": {
+          "package_name": "com.example.newsincardview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573088656315-4afu3h0q0kq3ld9u8h98u0snk854mc9d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjjhV9nlOl8A2WQw3OOkOuhfYlH5vCh1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573088656315-4afu3h0q0kq3ld9u8h98u0snk854mc9d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
