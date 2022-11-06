@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         }
         if (auth.currentUser !=null){
             startActivity(Intent(this,NewsClass::class.java))
+            finish()
         }
 
 
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
         ft.replace(R.id.frame, frag2)
         ft.commit()
     }
+
 
 
 }

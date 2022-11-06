@@ -58,17 +58,20 @@ private lateinit var clickhandle:LinearLayout
 
 
           Final.setOnClickListener {
-              if (Email.text.toString().equals(null)&& Passworrd.text.toString().equals(null) && Phnoe.text.toString().equals(null)&& Name.text.toString().equals(null)){
+              if (Email.text.toString().equals(null)|| Passworrd.text.toString().equals(null) || Phnoe.text.toString().equals(null)|| Name.text.toString().equals(null)){
+
+                  Toast.makeText(requireContext(),"Please fill the all fields",Toast.LENGTH_LONG).show()
+              }
+             else{
+
                   if(img.visibility.equals(View.VISIBLE)) {
+
                       cre(Email.text.toString(), Passworrd.text.toString())
                   }
                   else{
-                      Toast.makeText(requireContext(),"Please agree terms and conditions",Toast.LENGTH_LONG).show()
+                      cre(Email.text.toString(), Passworrd.text.toString())
+                      Toast.makeText(requireContext(),"Please fill the all fields",Toast.LENGTH_LONG).show()
                   }
-
-              }
-             else{
-                 Toast.makeText(requireContext(),"Please fill the all fields",Toast.LENGTH_LONG).show()
              }
           }
 
@@ -86,7 +89,7 @@ private lateinit var clickhandle:LinearLayout
                 save(Email.text.toString(),Passworrd.text.toString(),Phnoe.text.toString(),Name.text.toString())
             }
         }.addOnFailureListener{
-            Toast.makeText(requireContext(),"error registerd",Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(),"error registerd"+it.message,Toast.LENGTH_LONG).show()
             prg.visibility =View.GONE
         }
 

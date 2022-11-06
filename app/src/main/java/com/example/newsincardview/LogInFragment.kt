@@ -65,11 +65,13 @@ class LogInFragment:Fragment() {
               if(Email.text.toString().equals(null)  && password.text.toString().equals(null))
               {
 
-              create(Email.text.toString(),password.text.toString())
+                  Toast.makeText(requireContext(),"please fill the all fields",Toast.LENGTH_LONG).show()
           }
               else
               {
-                  Toast.makeText(requireContext(),"please fill the all fields",Toast.LENGTH_LONG).show()
+                  create(Email.text.toString(),password.text.toString())
+
+
               }
           }
           googlelogin.setOnClickListener {
@@ -81,15 +83,18 @@ class LogInFragment:Fragment() {
 
         forget.setOnClickListener {
             if(Email.text.toString().equals(null)){
-            auth2.sendPasswordResetEmail(Email.text.toString()).addOnCompleteListener {
-                if (it.isSuccessful) {
-
-                    Toast.makeText(requireContext(), "Email sent please check also spam folder of email", Toast.LENGTH_LONG).show()
-                }
-            }
-            }
-            else{
                 Toast.makeText(requireContext(),"please enter the Email",Toast.LENGTH_LONG).show()
+
+            }
+            else {
+                auth2.sendPasswordResetEmail(Email.text.toString()).addOnCompleteListener {
+                    if (it.isSuccessful) {
+
+                        Toast.makeText(requireContext(),
+                            "Email sent please check also spam folder of email",
+                            Toast.LENGTH_LONG).show()
+                    }
+                }
             }
         }
            return root
@@ -102,7 +107,9 @@ class LogInFragment:Fragment() {
         if(it.isSuccessful){
 
             Toast.makeText(requireContext(),"Successfully login",Toast.LENGTH_LONG).show()
-
+            var intent =Intent(requireContext(),NewsClass::class.java)
+            startActivity(intent)
+            activity?.finish()
         }
     }.addOnFailureListener{
         Toast.makeText(requireContext(),"please check email and password",Toast.LENGTH_LONG).show()
@@ -136,6 +143,8 @@ class LogInFragment:Fragment() {
 
                val intent =Intent(requireContext(),NewsClass::class.java)
                 startActivity(intent)
+                activity?.finish()
+
 
             }
             else{
@@ -143,7 +152,11 @@ class LogInFragment:Fragment() {
             }
 
         }
+
+
     }
+
+
 
 
 }
